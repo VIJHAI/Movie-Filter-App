@@ -1,0 +1,65 @@
+.movie-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+  padding: 16px 0;
+}
+
+/* Movie card styling */
+.movie-card {
+  background-color: #f9f9f9;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.movie-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+/* Chip container layout */
+.chip-group {
+  margin-bottom: 24px;
+}
+
+.chip-title {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Chip base style */
+.chip {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 999px;
+  background-color: #e0e0e0;
+  color: #333;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.25s, transform 0.2s;
+  outline: none;
+}
+
+/* Hover effect */
+.chip:hover {
+  background-color: #d4d4d4;
+}
+
+/* Selected chip */
+.chip.selected {
+  background-color: #007bff;
+  color: white;
+  font-weight: 600;
+  transform: scale(1.1);
+  box-shadow: 0 2px 8px rgba(0, 123, 255, 0.3);
+}
