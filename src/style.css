@@ -11,6 +11,8 @@ body {
   box-sizing: border-box;
 }
 
+/* === Search === */
+
 .search-bar {
   padding: 10px;
   width: 100%;
@@ -19,8 +21,38 @@ body {
   border: none;
   margin: 16px 0;
   font-size: 16px;
+  background-color: #1e1e1e;
+  color: white;
   box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
 }
+
+.history ul {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0;
+}
+
+.history li {
+  cursor: pointer;
+  padding: 6px 0;
+  color: #aaa;
+  transition: color 0.2s;
+}
+
+.history li:hover {
+  color: #fff;
+}
+
+.results {
+  margin-top: 16px;
+}
+
+.actors {
+  font-size: 0.85rem;
+  color: #ccc;
+}
+
+/* === Movie Cards === */
 
 .movie-list {
   display: grid;
@@ -46,6 +78,8 @@ body {
   outline: 2px solid #007bff;
 }
 
+/* === Filter Chips === */
+
 .chip-group {
   margin-bottom: 20px;
 }
@@ -66,28 +100,122 @@ body {
   transition: all 0.2s;
 }
 
+.chip:hover {
+  background-color: #444;
+}
+
 .chip.selected {
   background-color: #007bff;
   color: white;
   font-weight: bold;
 }
 
-.history ul {
-  list-style: none;
-  padding: 0;
+/* === Review Section === */
+
+.review-section {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
-.history li {
+.review-section textarea {
+  width: 100%;
+  min-height: 80px;
+  background-color: #2a2a2a;
+  color: white;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #444;
+  resize: vertical;
+  font-size: 14px;
+}
+
+.review-section button {
+  align-self: flex-start;
+  background-color: #007bff;
+  color: white;
+  padding: 6px 14px;
+  border: none;
+  border-radius: 6px;
   cursor: pointer;
-  padding: 4px 0;
-  color: #aaa;
+  font-weight: bold;
+  transition: background 0.2s;
 }
 
-.results {
-  margin-top: 16px;
+.review-section button:hover {
+  background-color: #0056cc;
 }
 
-.actors {
+.review-item {
+  background-color: #262626;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #333;
+  margin-top: 8px;
+}
+
+.review-item p {
+  margin: 0 0 6px 0;
+}
+
+.review-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
   font-size: 0.85rem;
+  color: #aaa;
+  flex-wrap: wrap;
+}
+
+.review-actions button {
+  background: none;
+  border: none;
   color: #ccc;
+  cursor: pointer;
+  font-size: 0.85rem;
+  padding: 2px 6px;
+}
+
+.review-actions button:hover {
+  color: white;
+}
+
+/* === Sort Dropdown === */
+
+.sort-toggle {
+  margin: 16px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sort-toggle select {
+  background: #222;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #444;
+}
+
+/* === Responsive === */
+
+@media (max-width: 600px) {
+  .movie-list {
+    grid-template-columns: 1fr;
+  }
+
+  .search-bar {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .review-section textarea {
+    font-size: 13px;
+  }
+
+  .review-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }

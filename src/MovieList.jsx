@@ -1,5 +1,6 @@
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import ReviewSection from "./ReviewSection"; // ✅ Import ReviewSection
 
 export default function MovieList({ movies }) {
   return (
@@ -18,6 +19,9 @@ export default function MovieList({ movies }) {
             <p><strong>Genre:</strong> {movie.genre}</p>
             <p><strong>Rating:</strong> {movie.rating}</p>
             <p><strong>Year:</strong> {movie.year}</p>
+
+            {/* ✅ Add review section below the movie details */}
+            <ReviewSection movieId={movie.id} />
           </motion.div>
         ))}
       </AnimatePresence>
